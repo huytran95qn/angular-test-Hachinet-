@@ -1,18 +1,23 @@
-<ng-container *ngFor="let item of (formBuilderItems$ | async)">
-  <ng-container [ngSwitch]="item.type">
-    <ng-container *ngSwitchCase="typeFormBuilder.Checkbox">
-      <form-builder-checkbox
-        [label]="item.title"
-        [viewMode]="true"
-        [(ngModel)]="item.value">
-      </form-builder-checkbox>
-    </ng-container>
+<ng-container *ngFor="let item of (formBuilderItems$ | async); let i = index">
+  <h2>
+    <b>Question {{i + 1}}: </b>
+    {{ item.title }}
+  </h2>
+  <p style="padding-left: 12px;">
+    <ng-container [ngSwitch]="item.type">
+      <ng-container *ngSwitchCase="typeFormBuilder.Checkbox">
+        <form-builder-checkbox
+          [viewMode]="true"
+          [(ngModel)]="item.value">
+        </form-builder-checkbox>
+      </ng-container>
 
-    <ng-container *ngSwitchCase="typeFormBuilder.TextArea">
-      <h2>{{ item.title }}</h2>
-      <p>{{ item.value }}</p>
+      <ng-container *ngSwitchCase="typeFormBuilder.TextArea">
+        <p>{{ item.value }}</p>
+      </ng-container>
     </ng-container>
-  </ng-container>
+  </p>
+
 </ng-container>
 
 <button class="cursor-pointer" (click)="backToFormBuilder()">Back to Forms Builder</button>

@@ -1,17 +1,20 @@
 <div class="row" >
-  <ng-container *ngFor="let item of formBuilderItems">
+  <ng-container *ngFor="let item of formBuilderItems; let i = index">
+    <h2>
+      <b>Question {{i + 1}}: </b>
+      {{ item.title }}
+      <b style="color: red;" *ngIf="item.required">*</b>
+    </h2>
     <ng-container [ngSwitch]="item.type">
       <ng-container *ngSwitchCase="typeFormBuilder.Checkbox">
         <form-builder-checkbox
           [(ngModel)]="item.value"
-          [label]="item.title"
           (ngModelChange)="updateValue()">
         </form-builder-checkbox>
       </ng-container>
 
       <ng-container *ngSwitchCase="typeFormBuilder.TextArea">
         <form-builder-textarea
-          [label]="item.title"
           [(ngModel)]="item.value"
           (ngModelChange)="updateValue()">
         </form-builder-textarea>
