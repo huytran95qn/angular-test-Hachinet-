@@ -1,0 +1,36 @@
+<div class="col-12">
+  <h2>{{ label }}</h2>
+
+  <span class="list-section">
+    <ul>
+      <ng-container *ngIf="!viewMode">
+        <li *ngFor="let item of model">
+          <mat-checkbox
+            [(ngModel)]="item.checked"
+            (ngModelChange)="updateItem(item)"
+          >
+            {{ item.label }}
+          </mat-checkbox>
+
+          <p *ngIf="item.id === 0 && item.checked">
+            <input
+              [(ngModel)]="item.other"
+              (ngModelChange)="updateOtherItem(item)"
+            />
+          </p>
+        </li>
+      </ng-container>
+
+      <ng-container *ngIf="viewMode">
+        <ng-container *ngFor="let item of model">
+          <ng-container *ngIf="item.checked">
+            <li>
+              <h2>{{ item.label }}</h2>
+              <p style="margin-left: 10px">{{ item.other }}</p>
+            </li>
+          </ng-container>
+        </ng-container>
+      </ng-container>
+    </ul>
+  </span>
+</div>

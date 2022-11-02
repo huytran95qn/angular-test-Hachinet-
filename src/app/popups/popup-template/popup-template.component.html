@@ -1,0 +1,28 @@
+<div class="popup-template">
+  <div class="popup-template-header">
+    <div class="popup-template-header-icon cursor-pointer">
+      <!-- <mat-icon aria-hidden="false">{{ matIcon }}</mat-icon> -->
+    </div>
+
+    <div class="popup-template-header-label">
+      {{ label }}
+    </div>
+
+    <div class="popup-template-header-close-icon cursor-pointer" (click)="onClose()">
+      <mat-icon aria-hidden="false" class="hover:icon-lightBlue">close</mat-icon>
+    </div>
+  </div>
+
+  <div class="popup-template-body">
+    <ng-content></ng-content>
+  </div>
+
+  <div class="popup-template-footer">
+    <button class="cursor-pointer btn-submit"
+      [disabled]="disabledSubmit"
+      (click)="onSubmit()">
+      Submit
+    </button>
+    <button class="cursor-pointer" (click)="onClose()">Cancel</button>
+  </div>
+</div>

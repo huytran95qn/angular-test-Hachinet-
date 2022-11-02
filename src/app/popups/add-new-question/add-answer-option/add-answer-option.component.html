@@ -1,0 +1,29 @@
+<div class="add-answer-options">
+  <ng-container *ngFor="let answer of answerOptions">
+    <div class="add-answer-option">
+      <mat-form-field appearance="fill">
+        <!-- <mat-checkbox></mat-checkbox> -->
+
+        <input matInput
+          placeholder="Add Answer Option"
+          [(ngModel)]="answer.label"
+          (ngModelChange)="updateValue()"
+          required>
+
+        <div class="cursor-pointer" (click)="remove(answer)">
+          <mat-icon aria-hidden="false">delete</mat-icon>
+        </div>
+        <mat-error>
+          This field is required
+        </mat-error>
+        <mat-hint>You can pick up your favorite car here</mat-hint>
+      </mat-form-field>
+    </div>
+  </ng-container>
+
+  <button class="add-another-answer"
+    [disabled]="maxAnswerOption <= answerOptions.length"
+   (click)="addAnotherAnswer()">
+   + Add another answer
+  </button>
+</div>

@@ -1,0 +1,60 @@
+.popup-template {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    border-bottom: 1px solid;
+
+    &-icon {
+      background-color: #e0edfa;
+
+      mat-icon {
+        color: #50a7f8;
+      }
+    }
+
+    &-label {
+      font-family: Roboto;
+      font-size: 18px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.17;
+      letter-spacing: normal;
+    }
+
+    &-close-icon {
+      mat-icon {
+        color: #dee2e6
+      }
+    }
+  }
+
+  &-body {
+    overflow: auto;
+    padding: 12px;
+    flex: 1;
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: end;
+    border-top: 1px solid;
+    height: 60px;
+    align-items: flex-end;
+
+    .btn-submit {
+      margin-right: 16px;
+    }
+
+    button {
+      min-width: 125px;
+      height: 40px;
+    }
+  }
+}

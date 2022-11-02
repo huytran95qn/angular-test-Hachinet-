@@ -1,0 +1,19 @@
+<ng-container *ngFor="let item of (formBuilderItems$ | async)">
+  <ng-container [ngSwitch]="item.type">
+    <ng-container *ngSwitchCase="typeFormBuilder.Checkbox">
+      <form-builder-checkbox
+        [label]="item.title"
+        [viewMode]="true"
+        [(ngModel)]="item.value">
+      </form-builder-checkbox>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="typeFormBuilder.TextArea">
+      <h2>{{ item.title }}</h2>
+      <p>{{ item.value }}</p>
+    </ng-container>
+  </ng-container>
+</ng-container>
+
+
+<a (click)="backToFormBuilder()">Back to Forms Builder</a>

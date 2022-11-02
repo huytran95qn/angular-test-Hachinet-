@@ -1,0 +1,10 @@
+ul {
+  list-style-type: none;
+  margin-top: 4px;
+
+  mat-checkbox::ng-deep {
+    .mat-checkbox-inner-container {
+      border: 1px solid;
+    }
+  }
+}

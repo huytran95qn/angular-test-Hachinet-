@@ -1,1 +1,91 @@
 /* You can add global styles to this file, and also import other style files */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body .mat-dialog-container {
+  width: 755px;
+  height: auto;
+  border-radius: 7px;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  border: 1px solid #dee2e6;
+  background: #ffffff;
+  color: black;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+mat-checkbox {
+  padding: 0.75em 0.75em 0 0.75em;
+  .mat-checkbox-inner-container {
+    border: 1px solid;
+  }
+}
+
+mat-radio-button {
+  margin-left: 8px;
+  .mat-radio-outer-circle {
+    border-color: #000;
+  }
+}
+
+mat-select {
+  height: 40px;
+  border: 1px solid;
+  border-radius: 7px;
+  padding: 0px 8px;
+
+  .mat-select-trigger {
+    height: 100%;
+
+    .mat-select-value,
+    .mat-select-arrow,
+    .mat-select-placeholder {
+      color: #000;
+    }
+  }
+}
+
+textarea {
+  border: 1px solid;
+  border-radius: 7px;
+  padding: 12px;
+}
+
+input {
+  border: 1px solid !important;
+  height: 40px;
+  border-radius: 7px;
+  padding: 0px 8px !important;
+}
+
+button {
+  border: 1px solid;
+  border-radius: 7px;
+  padding: 12px;
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+mat-form-field {
+  .mat-form-field-wrapper {
+    .mat-form-field-flex {
+      input {
+        width: calc(100% - 16px) !important;
+      }
+    }
+  }
+
+  .mat-form-field-appearance-fill .mat-select-arrow-wrapper {
+    transform: translateY(-50%);
+  }
+}

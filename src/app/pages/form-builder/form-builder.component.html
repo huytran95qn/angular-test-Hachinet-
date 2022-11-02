@@ -1,0 +1,30 @@
+<div class="row" >
+  <ng-container *ngFor="let item of formBuilderItems">
+    <ng-container [ngSwitch]="item.type">
+      <ng-container *ngSwitchCase="typeFormBuilder.Checkbox">
+        <form-builder-checkbox
+          [(ngModel)]="item.value"
+          [label]="item.title"
+          (ngModelChange)="updateValue()">
+        </form-builder-checkbox>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="typeFormBuilder.TextArea">
+        <form-builder-textarea
+          [label]="item.title"
+          [(ngModel)]="item.value"
+          (ngModelChange)="updateValue()">
+        </form-builder-textarea>
+      </ng-container>
+    </ng-container>
+
+  </ng-container>
+</div>
+
+<p>
+  <a (click)="addNewQuestion()">Add New Question</a>
+</p>
+
+<p>
+  <a (click)="reviewMyAnswers()">Review my answers</a>
+</p>
