@@ -15,9 +15,7 @@
             </mat-option>
           </mat-select>
 
-          <mat-error>
-            This field is required
-          </mat-error>
+          <mat-error>This field is required</mat-error>
         </mat-form-field>
       </div>
       <div class="col-12 flex">
@@ -25,14 +23,11 @@
           <label>Type question here</label>
           <input matInput placeholder="Type question here" [formControlName]="controlName.question">
 
-          <mat-error>
-            This field is required
-          </mat-error>
+          <mat-error>This field is required</mat-error>
         </mat-form-field>
       </div>
 
       <div class="col-12"
-        style="padding: 0.75em 0.75em 0 0.75em;"
         *ngIf="formGroup.value[controlName.questionType] === questionTypeEnum.Checkbox">
         <label>Answer Options</label>
         <add-answer-option [formControlName]="controlName.answerOptions"></add-answer-option>
